@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navitagion"
+    app:startDestination="@id/welcomeFragment">
+    <fragment
+        android:id="@+id/shoeListFragment"
+        android:name="com.udacity.shoestore.ui.main.shoelist.ShoeListFragment"
+        android:label="ShoeListFragment" >
+        <action
+            android:id="@+id/action_shoeListFragment2_to_shoeDetailFragment"
+            app:destination="@id/shoeDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shoeDetailFragment"
+        android:name="com.udacity.shoestore.ui.main.shoedetail.ShoeDetailFragment"
+        android:label="ShoeDetailFragment" />
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.udacity.shoestore.ui.main.welcome.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_instructionsFragment"
+            app:destination="@id/instructionsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/instructionsFragment"
+        android:name="com.udacity.shoestore.ui.main.instructions.InstructionsFragment"
+        android:label="InstructionsFragment" >
+        <action
+            android:id="@+id/action_instructionsFragment_to_shoeListFragment"
+            app:destination="@id/shoeListFragment"
+            app:popUpTo="@id/navitagion"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
